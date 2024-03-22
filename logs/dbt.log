@@ -1,0 +1,104 @@
+[0m18:52:43.190533 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f776ca47590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f776dd5e850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f776ca479d0>]}
+
+
+============================== 18:52:43.202006 | d6358349-bf7f-488b-a338-b2aa96de3161 ==============================
+[0m18:52:43.202006 [info ] [MainThread]: Running with dbt=1.7.10
+[0m18:52:43.203523 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': '/root/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt init dbtlearn', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:52:43.204906 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/root/.dbt')}
+[0m18:52:43.206224 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m18:52:43.223880 [debug] [MainThread]: Starter project path: /workspaces/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/venv/lib/python3.11/site-packages/dbt/include/starter_project
+[0m18:52:43.499787 [info ] [MainThread]: 
+Your new dbt project "dbtlearn" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:52:43.500877 [info ] [MainThread]: Setting up your profile.
+[0m18:53:42.060936 [error] [MainThread]: Encountered an error:
+
+[0m18:53:42.089794 [error] [MainThread]: Traceback (most recent call last):
+  File "/workspaces/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/venv/lib/python3.11/site-packages/dbt/cli/requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/venv/lib/python3.11/site-packages/dbt/cli/requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/venv/lib/python3.11/site-packages/dbt/cli/main.py", line 515, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/workspaces/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/venv/lib/python3.11/site-packages/dbt/task/init.py", line 344, in run
+    self.setup_profile(profile_name)
+  File "/workspaces/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/venv/lib/python3.11/site-packages/dbt/task/init.py", line 264, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/workspaces/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/venv/lib/python3.11/site-packages/dbt/task/init.py", line 181, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/workspaces/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/venv/lib/python3.11/site-packages/dbt/task/init.py", line 165, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/venv/lib/python3.11/site-packages/dbt/task/init.py", line 115, in generate_target_from_input
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/venv/lib/python3.11/site-packages/click/termui.py", line 164, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/venv/lib/python3.11/site-packages/click/termui.py", line 147, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m18:53:42.094172 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 58.910027, "process_user_time": 2.987169, "process_kernel_time": 0.732507, "process_mem_max_rss": "107764", "process_in_blocks": "19488", "command_success": false, "process_out_blocks": "0"}
+[0m18:53:42.095605 [debug] [MainThread]: Command `dbt init` failed at 18:53:42.095403 after 58.91 seconds
+[0m18:53:42.097170 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f776ca4cb10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f776ca4ea10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7770906050>]}
+[0m18:53:42.098648 [debug] [MainThread]: Flushing usage events
+[0m18:53:42.118840 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m18:53:58.906367 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb8c26ec50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb8c709910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb8c26f390>]}
+
+
+============================== 18:53:58.918396 | 09027c73-82e4-4b49-a563-8e00b658aa12 ==============================
+[0m18:53:58.918396 [info ] [MainThread]: Running with dbt=1.7.10
+[0m18:53:58.919888 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/root/.dbt', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt init dbtlearn', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:53:58.936283 [info ] [MainThread]: A project called dbtlearn already exists here.
+[0m18:53:58.941010 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.041207533, "process_user_time": 2.797169, "process_kernel_time": 0.540716, "process_mem_max_rss": "90752", "process_in_blocks": "5640", "process_out_blocks": "0"}
+[0m18:53:58.942602 [debug] [MainThread]: Command `dbt init` succeeded at 18:53:58.942394 after 0.04 seconds
+[0m18:53:58.944010 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb8c274510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb90142110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb8c709f10>]}
+[0m18:53:58.945408 [debug] [MainThread]: Flushing usage events
+[0m18:53:58.966715 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m18:54:26.701433 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe45ddc2dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe45ddc2b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe45ddc31d0>]}
+
+
+============================== 18:54:26.714142 | e213b8a4-c28c-48fd-b5c3-738cc41bc177 ==============================
+[0m18:54:26.714142 [info ] [MainThread]: Running with dbt=1.7.10
+[0m18:54:26.716137 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/root/.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt init dbtlearn', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:54:26.736365 [debug] [MainThread]: Starter project path: /workspaces/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt/venv/lib/python3.11/site-packages/dbt/include/starter_project
+[0m18:54:27.053940 [info ] [MainThread]: 
+Your new dbt project "dbtlearn" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:54:27.055036 [info ] [MainThread]: Setting up your profile.
+[0m18:55:58.272347 [info ] [MainThread]: Profile dbtlearn written to /root/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m18:55:58.277023 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 91.57708, "process_user_time": 3.103552, "process_kernel_time": 0.517961, "process_mem_max_rss": "107452", "process_in_blocks": "19488", "process_out_blocks": "8"}
+[0m18:55:58.278676 [debug] [MainThread]: Command `dbt init` succeeded at 18:55:58.278393 after 91.58 seconds
+[0m18:55:58.280203 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe45ddc3950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe45ddc8590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe45f2da310>]}
+[0m18:55:58.281916 [debug] [MainThread]: Flushing usage events
+[0m18:55:58.304800 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
