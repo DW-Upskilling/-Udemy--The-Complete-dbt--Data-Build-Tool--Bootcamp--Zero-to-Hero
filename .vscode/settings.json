@@ -1,3 +1,4 @@
 {
-    "docker.commands.attach": "${containerCommand} exec -it ${containerId} ${shellCommand}"
+    "docker.commands.attach": "${containerCommand} exec -it ${containerId} ${shellCommand}",
+    "dbt.queryLimit": 100
 }

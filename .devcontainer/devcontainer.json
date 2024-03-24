@@ -17,5 +17,13 @@
 	// Configure tool-specific properties.
 	// "customizations": {},
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	"remoteUser": "root"
+	"remoteUser": "root",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"innoverio.vscode-dbt-power-user"
+			]
+		}
+	},
+	"postCreateCommand": "mkdir ~/.dbt && cp ./profiles.yml ~/.dbt/profiles.yml"
 }
