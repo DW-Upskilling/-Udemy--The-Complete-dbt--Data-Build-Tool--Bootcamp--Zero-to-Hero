@@ -1,4 +1,5 @@
 {
     "docker.commands.attach": "${containerCommand} exec -it ${containerId} ${shellCommand}",
-    "dbt.queryLimit": 10
+    "dbt.queryLimit": 10,
+    "dbt.enableNewLineagePanel": true
 }

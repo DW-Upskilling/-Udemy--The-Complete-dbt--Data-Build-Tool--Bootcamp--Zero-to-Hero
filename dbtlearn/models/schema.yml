@@ -4,6 +4,7 @@ models:
   - name: dim_listings_cleansed
     columns:
       - name: listing_id
+        description: Primary key of the listings
         tests:
           - unique
           - not_null
@@ -21,5 +22,26 @@ models:
               values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
       
       - name: minimum_nights
+        description: '{{ doc("dim_listing_cleansed__minimum_nights") }}'
         tests:
           - positive_value
+
+  - name: dim_hosts_cleansed 
+    description: Hosts
+    columns:
+      - name: host_id
+        description: Primary key of the host
+        tests:
+          - not_null
+          - unique
+
+      - name: host_name
+        description: Name of the host
+
+      - name: is_superhost
+        description: Flag to determine whether the host is a super host or not
+        tests:
+          - accepted_values:
+              values: ['t', 'f']
+
+    
