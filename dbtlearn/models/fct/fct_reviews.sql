@@ -15,5 +15,13 @@ SELECT
 FROM src_reviews
 WHERE NVL(review_text, '') <> ''
 {% if is_incremental() %}
-    AND review_date > (SELECT MAX(review_date) FROM {{ this }})
+    {{ log(this ~ ' incremental_load()', info=True) }}
+    {% if var('reviews_start_date', False) and var('reviews_end_date', False) %}
+        {{ log(this ~ ' from: ' ~ var('reviews_start_date') ~ ' to: ' ~ var('reviews_end_date'), info=True) }}
+        AND review_date >= '{{ var("reviews_start_date") }}'
+        AND review_date < '{{ var("reviews_end_date") }}'
+    {% else %}
+        {{ log(this ~ ' pulling everthing else not loaded...', info=True) }}
+        AND review_date > (SELECT MAX(review_date) FROM {{ this }})
+    {% endif %} 
 {% endif %} 
