@@ -42,5 +42,7 @@ models:
       +materialized: table
     fct:
       +materialized: table
-      
-    
+
+# dbt user-defined variables 
+vars:
+  username: developerswork    
